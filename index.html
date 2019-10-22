@@ -14,7 +14,11 @@
 			for (index = 0; index < array.length; index++) {
 				$(array[index]).children("div").width($(array[index]).width());
 			};
+			if ($(window).width() < 650) {
+   				$('.top-level-menu').addClass('collapse navbar-collapse').removeClass('top-level-menu');
+			};
 		});
+		
 	</script>
 </head>
 <body>
