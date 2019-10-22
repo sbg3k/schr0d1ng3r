@@ -88,9 +88,8 @@ img{
 	width: 150px;
 	position: relative;
 }
-@media only screen 
-  and (max-device-width: 650px)
-  and (orientation: portrait) { 
+@media all
+  and (max-device-width: 650px) { 
 	  body{
 	  	display:none;
 	  }
