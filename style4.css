@@ -1,6 +1,6 @@
 * body{
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 }
 header{
 	/*width: 100%;*/
@@ -8,7 +8,8 @@ header{
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
-	align-items: stretch;
+	align-items: center;
+	background-color: black;
 	/*align-items: center;*/
 	
 }
@@ -18,7 +19,7 @@ img{
 .top-level-menu{
 	display: flex;
 	flex-direction: row;
-	flex-grow:3;
+	flex-grow:2;
 	justify-content: space-around;
 	align-items: center;	
 	background:black;
@@ -28,7 +29,7 @@ img{
 	padding: 0;
 	margin: 0;
 }*/
-.top-level-menu div:hover > div{display: flex;background:black;}
+.top-level-menu div:hover > div{display: block;background:#222222;text-align:center;}
 .top-level-menu a{
 	font: bold 14px Arial, Helvetica, sans-serif;
 	color: #FFFFFF;
@@ -73,7 +74,7 @@ img{
 	flex-direction: column;
 	flex-wrap:wrap;
 	top: 2px;
-	left: 109px;
+	left: 99px;
 	justify-content:space-between;
 	list-style: none;
 	padding: 0;
@@ -86,4 +87,3 @@ img{
 	width: 200px;
 	position: relative;
 }
-
