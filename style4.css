@@ -29,7 +29,7 @@ img{
 	padding: 0;
 	margin: 0;
 }*/
-.top-level-menu div:hover > div{display: block;background:#222222;text-align:center;}
+.top-level-menu div:hover > div{display: block;background:#121212;text-align:center;}
 .top-level-menu a{
 	font: bold 14px Arial, Helvetica, sans-serif;
 	color: #FFFFFF;
@@ -55,7 +55,6 @@ img{
 	position: relative;
 	/*height: 30px;*/
 	background: black;
-	width: 80px;	
 	padding-left: 3px;
 	padding-right: 3px;
 }
@@ -74,7 +73,7 @@ img{
 	flex-direction: column;
 	flex-wrap:wrap;
 	top: 2px;
-	left: 99px;
+	left: 67.8px;
 	justify-content:space-between;
 	list-style: none;
 	padding: 0;
@@ -84,6 +83,6 @@ img{
 .third-level-menu > div{
 	/* height: 30px;*/
 	background-color: black;
-	width: 200px;
+	width: 150px;
 	position: relative;
 }
