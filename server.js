@@ -16,6 +16,24 @@ const transporter = nodemailer.createTransport({
     pass: process.env.pas
   }
 });
+const accountSid = process.env.sid;
+const authToken = process.env.tok;
+const client = require('twilio')(accountSid, authToken);
+var now = new Date();
+var hour = now.getHours();
+var minutes = now.getMinutes();
+console.log(hour);
+console.log(minutes);
+app.use(
+  bodyParser.urlencoded({
+    extended: true
+  })
+);
+
+/**bodyParser.json(options)
+ * Parses the text as JSON and exposes the resulting object on req.body.
+ */
+app.use(bodyParser.json());
 async function elchapo() {
   var student = require(process.env.pat);
   //var student = require("/app/.data/users.json"); /*gets json file containing user details*/
@@ -28,8 +46,8 @@ async function elchapo() {
         args: ["--no-sandbox"]
       });
       const page = await browser.newPage();
-      await page.setDefaultNavigationTimeout(4000);
-      await page.goto("https://www.jamb.org.ng/eFacility./");
+      await page.setDefaultNavigationTimeout(5000);
+      await page.goto("https://www.jamb.org.ng/eFacility../");
       await page.focus("#email");
       await page.keyboard.type(user["mail"]);
       await page.focus("#password");
@@ -51,10 +69,16 @@ async function elchapo() {
       await browser.close();
       var message = {
         from: "autocapsbot@gmail.com", // sender address
-        to: user["email"], // list of receivers
+        to: user["email"], // receiver mail
         subject: "Subject of your email", // Subject line
         html: admission // plain text body
       };
+      client.messages.create({
+           body: admission,
+           from: '+13092710176',
+           to: user["num"]
+        })
+        .then(message => console.log(message.sid));
       await console.log({ text: admission });
       transporter.sendMail(message);
       /*transporter.sendMail({
@@ -68,34 +92,18 @@ async function elchapo() {
       function check() {
         return user;
       }
+      if (error=='TimeoutError'){
+        console.log('Timed Out')
+      }
       //console.error(error);
       //users.splice(users.findIndex(user), 1);
       //fs.writeFileSync("public/new.json", JSON.stringify({"users": users}));
       //console.log(users.findIndex(check))
-      console.log(user)
+      console.error("error")
     }
   }
 }
 
-var now = new Date();
-var hour = now.getHours();
-var minutes = now.getMinutes();
-console.log(hour);
-console.log(minutes);
-if (hour == 16){
-  console.log("Time to Send!");
-  setTimeout(elchapo,43200)
-};
-app.use(
-  bodyParser.urlencoded({
-    extended: true
-  })
-);
-
-/**bodyParser.json(options)
- * Parses the text as JSON and exposes the resulting object on req.body.
- */
-app.use(bodyParser.json());
 router.get("/", async function (req, res) {
   res.sendFile(path.join(__dirname + "/public/index.html"));
   console.log("response");
@@ -106,6 +114,11 @@ router.get("/style.css", async function(req, res) {
 });
 router.get("/client.js", async function(req, res) {
   res.sendFile(path.join(__dirname + "/public/client.js"));
+  console.log("response");
+});
+app.get("/startMail", async function(req, res) {
+  res.sendFile(path.join(__dirname + "/public/client.js"));
+  elchapo()
   console.log("response");
 });
 app.post("/form", upload.array(), async function(req, res, next) {

@@ -1,1 +1,28 @@
-{"users":[{"mail":"ademorotis@gmail.com","password":"renaissance","email":"ademorotis@gmail.com"},{"mail":"oluwashaeyhoon@gmail.com","password":"renaissance","email":"oluwashaeyhoon@gmail.com"},{"email":"oluwashaeyhoon@gmail.com","mail":"oluwashaeyhoon@gmail.com","password":"renaissance"},{"mail":"ademorotis@gmail.com","password":"fyugddrr","email":"owoeyepo@gmail.com","frequency":"1"},{"mail":"adem@gmail.com","password":"fyugddrr","email":"owoeyepo@gmail.com","frequency":"1"},{"mail":"oluwashaeyhoon@gmail.com","password":"tertdgdfgd","email":"airbt@grr.la","frequency":"1"},{"mail":"oluwashaeyh@gmail.com","password":"hrthrth","email":"owoeyepo@gmail.com","frequency":"1"},{"mail":"ola@gmail.com","password":"olaolaola","email":"ola@grr.la","frequency":"1"},{"mail":"ola@gmail.com","password":"uyfuyu","email":"oluwashaeyh@gmail.com","frequency":"1"}]}
+{
+  "users": [
+    {
+      "mail": "ademorotis@gmail.com",
+      "password": "renaissance",
+      "email": "ademorotis@gmail.com",
+      "num": "+2349026906034"
+    },
+    {
+      "mail": "ademorotis@gmail.com",
+      "password": "renaissance",
+      "email": "ademorotis@gmail.com",
+      "num": "+2348151154410"
+    },
+    {
+      "mail": "oluwashaeyhoon@gmail.com",
+      "password": "renaissance",
+      "email": "oluwashaeyhoon@gmail.com",
+      "num": "+2348033188845"
+    },
+    {
+      "email": "oluwashaeyhoon@gmail.com",
+      "mail": "oluwashaeyhoon@gmail.com",
+      "password": "renaissance",
+      "num": "+2349026906034"
+    }
+  ]
+}
